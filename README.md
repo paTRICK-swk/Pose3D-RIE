@@ -3,7 +3,7 @@
 
 # Improving Robustness and Accuracy via Relative Information Encoding in 3D Human Pose Estimation (ACM MM2021)
 <p align="center"><img src="demo/framework.png" alt="" /></p>
-This is the implementation of the framework described in our paper: <i>Improving Robustness and Accuracy via Relative Information Encoding in 3D Human Pose Estimation</i> by Wenkang Shan, Haopeng Lu, Shanshe Wang, Xinfeng Zhang,  and Wen Gao.
+This is the implementation of the framework described in our paper: <a href="https://arxiv.org/abs/2107.13994"><i>Improving Robustness and Accuracy via Relative Information Encoding in 3D Human Pose Estimation</i></a> by Wenkang Shan, Haopeng Lu, Shanshe Wang, Xinfeng Zhang,  and Wen Gao.
 <p align="center"><img src="demo/demo_h36m.gif"  alt="" /></p>
 
 
