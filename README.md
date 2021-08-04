@@ -1,6 +1,9 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/improving-robustness-and-accuracy-via/monocular-3d-human-pose-estimation-on-human3)](https://paperswithcode.com/sota/monocular-3d-human-pose-estimation-on-human3?p=improving-robustness-and-accuracy-via)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/improving-robustness-and-accuracy-via/3d-human-pose-estimation-on-human36m)](https://paperswithcode.com/sota/3d-human-pose-estimation-on-human36m?p=improving-robustness-and-accuracy-via)
+
 # Improving Robustness and Accuracy via Relative Information Encoding in 3D Human Pose Estimation (ACM MM2021)
 <p align="center"><img src="demo/framework.png" alt="" /></p>
-This is the implementation of the framework described in our paper: *Improving Robustness and Accuracy via Relative Information Encoding in 3D Human Pose Estimation* by Wenkang Shan, Haopeng Lu, Shanshe Wang, Xinfeng Zhang,  and Wen Gao.
+This is the implementation of the framework described in our paper: <i>Improving Robustness and Accuracy via Relative Information Encoding in 3D Human Pose Estimation</i> by Wenkang Shan, Haopeng Lu, Shanshe Wang, Xinfeng Zhang,  and Wen Gao.
 <p align="center"><img src="demo/demo_h36m.gif"  alt="" /></p>
 
 
@@ -70,6 +73,15 @@ To generate visualizations of the model, run:
 You can get different results by changing the values of these arguments.
 
 ### Citation
+If you find this repo useful, please consider cite our paper:
+```
+@article{shan2021improving,
+  title={Improving Robustness and Accuracy via Relative Information Encoding in 3D Human Pose Estimation},
+  author={Shan, Wenkang and Lu, Haopeng and Wang, Shanshe and Zhang, Xinfeng and Gao, Wen},
+  journal={arXiv preprint arXiv:2107.13994},
+  year={2021}
+}
+```
 
 # Acknowledgement
 Our code refers to the following repositories.
