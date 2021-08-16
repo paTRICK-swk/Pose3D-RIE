@@ -442,16 +442,16 @@ if not args.evaluate:
 
         # Save checkpoint if necessary
         if epoch % args.checkpoint_frequency == 0:
-            chk_path = os.path.join(args.checkpoint, 'stage_', str(args.stage), '_epoch_{}.bin'.format(epoch))
+            chk_path = os.path.join(args.checkpoint, 'stage_' + str(args.stage) + '_epoch_{}.bin'.format(epoch))
             print('Saving checkpoint to', chk_path)
 
-        torch.save({
-            'epoch': epoch,
-            'lr': lr,
-            'random_state': train_generator.random_state(),
-            'optimizer': optimizer.state_dict(),
-            'model_pos': model_pos_train.state_dict(),
-        }, chk_path)
+            torch.save({
+                'epoch': epoch,
+                'lr': lr,
+                'random_state': train_generator.random_state(),
+                'optimizer': optimizer.state_dict(),
+                'model_pos': model_pos_train.state_dict(),
+            }, chk_path)
 
         # Save training curves after every epoch, as .png images (if requested)
         if args.export_training_curves and epoch > 3:
