@@ -59,7 +59,7 @@ This will train the FFM for 80 epochs. The parameters of the encoders are loaded
 
 For the third stage, run:
 ```bash
-python run.py -k gt --stage 3 -lfd 256 -ft stage_2_epoch_80.bin -lr 0.0005 
+python run.py -k gt --stage 3 -lfd 256 -ft stage_2_epoch_80.bin -lr 0.0005 -e 20
 ```
 This will finetune the whole framework for 20 epochs.
 
