@@ -241,8 +241,15 @@ if args.pretrain:
             value.requires_grad = False
         cnt = cnt + 1
 
-if args.resume or args.evaluate:
-    chk_filename = os.path.join(args.checkpoint, args.resume if args.resume else args.evaluate)
+if args.resume or args.evaluate or args.finetune:
+    filename = ""
+    if args.resume != "":
+        filename = args.resume
+    elif args.evaluate != "":
+        filename = args.evaluate
+    else:
+        filename = args.finetune
+    chk_filename = os.path.join(args.checkpoint, filename)
     print('Loading checkpoint', chk_filename)
     checkpoint = torch.load(chk_filename, map_location=lambda storage, loc: storage)
     print('This model was trained for {} epochs'.format(checkpoint['epoch']))

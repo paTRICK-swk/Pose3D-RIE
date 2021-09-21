@@ -51,6 +51,8 @@ def parse_args():
                         help='dimension of the global and local features')
     parser.add_argument('-p', '--pretrain', default='', type=str, metavar='FILENAME',
                         help='load the pretrained model from the first stage of optimization')
+    parser.add_argument('-ft', '--finetune', default='', type=str, metavar='FILENAME',
+                        help='checkpoint to finetune (file name)')
 
     # Experimental
     parser.add_argument('--subset', default=1, type=float, metavar='FRACTION', help='reduce dataset size by fraction')
