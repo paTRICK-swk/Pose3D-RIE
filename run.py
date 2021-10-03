@@ -491,8 +491,9 @@ def evaluate(test_generator, action=None, return_predictions=False):
         model_pos.eval()
         N = 0
         cnt = 0
-        frame_num = test_generator.num_frames()
-        output = torch.zeros([frame_num, 17, 3], dtype=torch.float32)
+        #frame_num = test_generator.num_frames()
+        #output = torch.zeros([frame_num, 17, 3], dtype=torch.float32)
+        output = []
 
         if args.test_time_augmentation:
             for _, batch, batch_2d, batch_2d_flip in test_generator.next_epoch():
@@ -513,7 +514,10 @@ def evaluate(test_generator, action=None, return_predictions=False):
                                               keepdim=True)
 
                 if return_predictions:
-                    output[cnt] = predicted_3d_pos.squeeze().cpu()
+                    if cnt == 0:
+                        output = predicted_3d_pos.squeeze().cpu()
+                    else:
+                        output = np.concatenate((output, predicted_3d_pos.squeeze().cpu()), axis=0)
                     cnt = cnt + 1
                     continue
 
@@ -599,7 +603,7 @@ if args.render:
     if ground_truth is None:
         print('INFO: this action is unlabeled. Ground truth will not be rendered.')
 
-    gen = Evaluate_Generator(1, None, None, [input_keypoints], args.stride,
+    gen = Evaluate_Generator(args.batch_size, None, None, [input_keypoints], args.stride,
                              pad=pad, causal_shift=causal_shift, augment=args.test_time_augmentation,
                              shuffle=False,
                              kps_left=kps_left, kps_right=kps_right, joints_left=joints_left,
@@ -707,7 +711,7 @@ else:
                     continue
 
             poses_act, poses_2d_act = fetch_actions(actions[action_key])
-            gen = Evaluate_Generator(1, None, poses_act, poses_2d_act, args.stride,
+            gen = Evaluate_Generator(args.batch_size, None, poses_act, poses_2d_act, args.stride,
                                      pad=pad, causal_shift=causal_shift, augment=args.test_time_augmentation,
                                      shuffle=False,
                                      kps_left=kps_left, kps_right=kps_right, joints_left=joints_left,
