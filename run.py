@@ -269,7 +269,7 @@ if not args.evaluate:
 
     lr = args.learning_rate
 
-    optimizer = optim.Adam(model_pos_train.parameters(), lr=lr, amsgrad=True)
+    optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model_pos_train.parameters()), lr=lr, amsgrad=True)
 
     lr_decay = args.lr_decay
 
