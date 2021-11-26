@@ -565,7 +565,7 @@ def evaluate(test_generator, action=None, return_predictions=False):
                                                                                                   inputs)
 
         if return_predictions:
-            return output.numpy()
+            return output
 
     log_path = os.path.join(args.checkpoint, 'evaluating_log.txt')
     f = open(log_path, mode='a')
