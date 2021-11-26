@@ -53,15 +53,15 @@ This will train the encoders for 80 epochs.  In this stage, the Feature Fusion M
 
 For the second stage, run:
 ```bash
-python run.py -k gt --stage 2 -lfd 256 -p stage_1_epoch_80.bin
+python run.py -k gt --stage 2 -lfd 256 -p stage_1_your_best_model.bin
 ```
 This will train the FFM for 80 epochs. The parameters of the encoders are loaded from the first stage and fixed.
 
 For the third stage, run:
 ```bash
-python run.py -k gt --stage 3 -lfd 256 -ft stage_2_epoch_80.bin -lr 0.0005 -e 20
+python run.py -k gt --stage 3 -lfd 256 -ft stage_2_your_best_model.bin -lr 0.0005 -e 20
 ```
-This will finetune the whole framework for 20 epochs.
+This will finetune the whole framework for 20 epochs. You can train for more epochs to achieve better results.
 
 
 ### Visualization 
