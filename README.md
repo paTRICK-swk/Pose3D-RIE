@@ -75,11 +75,19 @@ You can get different results by changing the values of these arguments.
 ### Citation
 If you find this repo useful, please consider cite our paper:
 ```
+@inproceedings{shan2021improving,
+  title={Improving Robustness and Accuracy via Relative Information Encoding in 3D Human Pose Estimation},
+  author={Shan, Wenkang and Lu, Haopeng and Wang, Shanshe and Zhang, Xinfeng and Gao, Wen},
+  booktitle={Proceedings of the 29th ACM International Conference on Multimedia},
+  pages={3446--3454},
+  year={2021}
+}
 ```
 
 # Acknowledgement
 Our code refers to the following repositories.
+* [3d-pose-baseline](https://github.com/una-dinosauria/3d-pose-baseline)
 * [VideoPose3D](https://github.com/facebookresearch/VideoPose3D)
-* [StridedTransformer-Pose3D](https://github.com/Vegetebird/StridedTransformer-Pose3D)
+* [Attention3DHumanPose](https://github.com/lrxjason/Attention3DHumanPose)
 
 We thank the authors for releasing their codes. If you use our code, please consider citing their works as well.
